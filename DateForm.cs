@@ -7,6 +7,7 @@ public partial class DateForm : Form
     public DateForm()
     {
         InitializeComponent();
+        this.Size = new Size(230, 100);
 
         // Create and configure the label
         date = new Label();
@@ -15,19 +16,16 @@ public partial class DateForm : Form
         date.Location = new System.Drawing.Point(0, 0);
 
         // Initial update
-        //UpdateDate();
+        UpdateDate();
 
         // Add controls to the form
-        //Controls.Add(date);
+        Controls.Add(date);
         Text = "AP-Date";
-        AutoSize = true;
     }
 
     private void UpdateDate()
     {
-        date.Text = DateTime.Now.ToString("dd MM");
-        // Examples of other formats:
-        // "dd/MM" -> 17/12
-        // "d MMM"  -> 17 Dec
+        date.Text = DateTime.Now.ToString("dd/MM");
+        // Examples of other formats: "d MMM"  -> 17 Dec
     }
 }
