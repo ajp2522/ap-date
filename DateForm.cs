@@ -15,10 +15,10 @@ public partial class DateForm : Form
         date.Location = new System.Drawing.Point(0, 0);
 
         // Initial update
-        UpdateDate();
+        //UpdateDate();
 
         // Add controls to the form
-        Controls.Add(date);
+        //Controls.Add(date);
         Text = "AP-Date";
         AutoSize = true;
     }
