@@ -2,30 +2,47 @@ namespace ap_date;
 
 public partial class DateForm : Form
 {
-    Label date;
+    private readonly Label date;
+    private readonly CpuGaugeControl cpuGauge;
+    private readonly MemoryGaugeControl memoryGauge;
 
     public DateForm()
     {
         InitializeComponent();
-        this.Size = new Size(230, 100);
+        ClientSize = new Size(375, 270);
+        BackColor = Color.FromArgb(24, 27, 29);
+        ForeColor = Color.White;
 
-        // Create and configure the label
         date = new Label();
         date.AutoSize = true;
-        date.Font = new System.Drawing.Font("Segoe UI", 24F);
-        date.Location = new System.Drawing.Point(0, 0);
+        date.BackColor = BackColor;
+        date.Font = new Font("Segoe UI", 24F);
+        date.ForeColor = ForeColor;
+        date.Location = new Point(10, 0);
 
-        // Initial update
         UpdateDate();
 
-        // Add controls to the form
+        cpuGauge = new CpuGaugeControl
+        {
+            Location = new Point(10, 85),
+            Size = new Size(170, 170)
+        };
+
+        memoryGauge = new MemoryGaugeControl
+        {
+            Location = new Point(195, 85),
+            Size = new Size(170, 170)
+        };
+
         Controls.Add(date);
+        Controls.Add(cpuGauge);
+        Controls.Add(memoryGauge);
         Text = "AP-Date";
     }
 
     private void UpdateDate()
     {
-        date.Text = DateTime.Now.ToString("dd/MM");
+        date.Text = DateTime.Now.ToString("dd/MMM");
         // Examples of other formats: "d MMM"  -> 17 Dec
     }
 }
