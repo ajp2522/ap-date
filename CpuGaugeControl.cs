@@ -15,7 +15,7 @@ public sealed class CpuGaugeControl : Control
 
     public CpuGaugeControl()
     {
-        Size = new Size(170, 170);
+        Size = new Size(95, 95);
         BackColor = Color.FromArgb(24, 27, 29);
         ForeColor = Color.White;
         DoubleBuffered = true;
@@ -36,12 +36,12 @@ public sealed class CpuGaugeControl : Control
 
         e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
-        const float strokeWidth = 12;
+        const float strokeWidth = 6.72F;
         var bounds = new RectangleF(
-            strokeWidth / 2 + 2,
-            strokeWidth / 2 + 2,
-            Width - strokeWidth - 4,
-            Height - strokeWidth - 4);
+            strokeWidth / 2 + 1.12F,
+            strokeWidth / 2 + 1.12F,
+            Width - strokeWidth - 2.24F,
+            Height - strokeWidth - 2.24F);
 
         using var trackPen = new Pen(Color.FromArgb(56, 63, 65), strokeWidth);
         e.Graphics.DrawArc(trackPen, bounds, 0, 360);

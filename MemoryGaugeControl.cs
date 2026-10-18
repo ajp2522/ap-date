@@ -12,9 +12,9 @@ public sealed class MemoryGaugeControl : Control
 
     public MemoryGaugeControl()
     {
-        Size = new Size(170, 170);
+        Size = new Size(95, 95);
         BackColor = Color.FromArgb(24, 27, 29);
-        ForeColor = Color.LimeGreen;
+        ForeColor = Color.White;
         DoubleBuffered = true;
 
         UpdateUsage();
@@ -33,12 +33,12 @@ public sealed class MemoryGaugeControl : Control
 
         e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
-        const float strokeWidth = 12;
+        const float strokeWidth = 6.72F;
         var bounds = new RectangleF(
-            strokeWidth / 2 + 2,
-            strokeWidth / 2 + 2,
-            Width - strokeWidth - 4,
-            Height - strokeWidth - 4);
+            strokeWidth / 2 + 1.12F,
+            strokeWidth / 2 + 1.12F,
+            Width - strokeWidth - 2.24F,
+            Height - strokeWidth - 2.24F);
 
         using var trackPen = new Pen(Color.FromArgb(56, 63, 65), strokeWidth);
         e.Graphics.DrawArc(trackPen, bounds, 0, 360);
@@ -64,7 +64,7 @@ public sealed class MemoryGaugeControl : Control
         };
 
         var center = new PointF(Width / 2F, Height / 2F);
-        e.Graphics.DrawString("mem", labelFont, labelBrush,
+        e.Graphics.DrawString("Mem", labelFont, labelBrush,
             new RectangleF(0, center.Y - 23, Width, 28), centeredText);
         e.Graphics.DrawString(
             $"{usagePercentage:0}%",
