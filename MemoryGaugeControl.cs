@@ -14,7 +14,7 @@ public sealed class MemoryGaugeControl : Control
     {
         Size = new Size(95, 95);
         BackColor = Color.FromArgb(24, 27, 29);
-        ForeColor = Color.LimeGreen;
+        ForeColor = Color.White;
         DoubleBuffered = true;
 
         UpdateUsage();
@@ -64,7 +64,7 @@ public sealed class MemoryGaugeControl : Control
         };
 
         var center = new PointF(Width / 2F, Height / 2F);
-        e.Graphics.DrawString("mem", labelFont, labelBrush,
+        e.Graphics.DrawString("Mem", labelFont, labelBrush,
             new RectangleF(0, center.Y - 23, Width, 28), centeredText);
         e.Graphics.DrawString(
             $"{usagePercentage:0}%",

@@ -71,7 +71,7 @@ public sealed class NetworkGaugeControl : Control
         };
 
         var center = new PointF(Width / 2F, Height / 2F);
-        e.Graphics.DrawString("NET", labelFont, labelBrush,
+        e.Graphics.DrawString("Net", labelFont, labelBrush,
             new RectangleF(0, center.Y - 23, Width, 28), centeredText);
         e.Graphics.DrawString(
             transferRateBytesPerSecond is double rate ? FormatTransferRate(rate) : "--",
