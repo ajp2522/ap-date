@@ -16,7 +16,7 @@ public partial class DateForm : Form
         date = new Label();
         date.AutoSize = true;
         date.BackColor = BackColor;
-        date.Font = new Font("Segoe UI", 24F);
+        date.Font = new Font("Segoe UI", 12F);
         date.ForeColor = ForeColor;
         date.Location = new Point(10, 0);
 
@@ -42,7 +42,7 @@ public partial class DateForm : Form
 
     private void UpdateDate()
     {
-        date.Text = DateTime.Now.ToString("dd/MMM");
+        date.Text = DateTime.Now.ToString("dd/MMM HH:mm");
         // Examples of other formats: "d MMM"  -> 17 Dec
     }
 }
